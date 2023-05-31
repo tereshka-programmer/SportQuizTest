@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SportQuiz</string>
+    <string name="easy">Easy</string>
+    <string name="hard">Hard</string>
+    <string name="medium">Medium</string>
+    <string name="choose_the_level_please">Choose the level please</string>
 </resources>
