@@ -5,6 +5,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.sportquiz.domain.entities.Question
 import com.example.sportquiz.domain.repository.QuestionsRepository
+import com.example.sportquiz.domain.repository.SharedCacheRepository
+import com.example.sportquiz.utils.Constants
 import com.example.sportquiz.utils.Event
 import com.example.sportquiz.utils.publishEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -15,7 +17,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class GameViewModel @Inject constructor(
-    private val questionsRepository: QuestionsRepository
+    private val questionsRepository: QuestionsRepository,
+    private val sharedCacheRepository: SharedCacheRepository
 ) : ViewModel() {
 
     private var listOfQuestions: List<Question> = listOf()
@@ -43,6 +46,8 @@ class GameViewModel @Inject constructor(
         }
     }
 
-
+    fun addScore() {
+        sharedCacheRepository.setScore(Constants.DEFAULT_INCREASE_OF_SCORE)
+    }
 
 }

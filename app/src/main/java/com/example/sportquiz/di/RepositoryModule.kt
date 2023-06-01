@@ -1,8 +1,10 @@
 package com.example.sportquiz.di
 
 import com.example.sportquiz.data.repositoryImpl.QuestionsRepositoryImpl
+import com.example.sportquiz.data.repositoryImpl.SharedCacheRepositoryImpl
 import com.example.sportquiz.data.room.RoomQuestionsSourceImpl
 import com.example.sportquiz.domain.repository.QuestionsRepository
+import com.example.sportquiz.domain.repository.SharedCacheRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -16,5 +18,10 @@ abstract class RepositoryModule {
     abstract fun bindQuestionsRepository(
         questionsRepositoryImpl: QuestionsRepositoryImpl
     ): QuestionsRepository
+
+    @Binds
+    abstract fun bindSharedCacheRepository(
+        sharedCacheRepositoryImpl: SharedCacheRepositoryImpl
+    ): SharedCacheRepository
 
 }

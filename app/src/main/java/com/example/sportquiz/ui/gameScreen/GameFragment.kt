@@ -3,6 +3,7 @@ package com.example.sportquiz.ui.gameScreen
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -44,45 +45,26 @@ class GameFragment() : Fragment(R.layout.fragment_game) {
             activateAnswerButtons()
         }
 
-        binding.btFirstAnswer.setOnClickListener {
-            disableAnswerButtons()
-            if (binding.btFirstAnswer.text == trueAnswer){
-                binding.btFirstAnswer.background.setTint(ContextCompat.getColor(requireContext(), R.color.green))
-            } else {
-                binding.btFirstAnswer.background.setTint(ContextCompat.getColor(requireContext(), R.color.red))
-            }
-        }
+        binding.btFirstAnswer.setOnClickListener(answersListener)
 
-        binding.btSecondAnswer.setOnClickListener {
-            disableAnswerButtons()
-            if (binding.btSecondAnswer.text == trueAnswer){
-                binding.btSecondAnswer.background.setTint(ContextCompat.getColor(requireContext(), R.color.green))
-            } else {
-                binding.btSecondAnswer.background.setTint(ContextCompat.getColor(requireContext(), R.color.red))
-            }
-        }
+        binding.btSecondAnswer.setOnClickListener(answersListener)
 
-        binding.btThirdAnswer.setOnClickListener {
-            disableAnswerButtons()
-            if (binding.btThirdAnswer.text == trueAnswer){
-                binding.btThirdAnswer.background.setTint(ContextCompat.getColor(requireContext(), R.color.green))
-            } else {
-                binding.btThirdAnswer.background.setTint(ContextCompat.getColor(requireContext(), R.color.red))
-            }
-        }
+        binding.btThirdAnswer.setOnClickListener(answersListener)
 
-        binding.btFourAnswer.setOnClickListener {
-            disableAnswerButtons()
-            if (binding.btFourAnswer.text == trueAnswer){
-                binding.btFourAnswer.background.setTint(ContextCompat.getColor(requireContext(), R.color.green))
-            } else {
-                binding.btFourAnswer.background.setTint(ContextCompat.getColor(requireContext(), R.color.red))
-            }
-        }
+        binding.btFourAnswer.setOnClickListener(answersListener)
 
     }
 
-
+    private val answersListener = View.OnClickListener { view ->
+        val button = view as Button
+        disableAnswerButtons()
+        if (button.text == trueAnswer){
+            button.background.setTint(ContextCompat.getColor(requireContext(), R.color.green))
+            viewModel.addScore()
+        } else {
+            button.background.setTint(ContextCompat.getColor(requireContext(), R.color.red))
+        }
+    }
 
     private fun observeReturnEvent() {
         lifecycleScope.launchWhenStarted {
