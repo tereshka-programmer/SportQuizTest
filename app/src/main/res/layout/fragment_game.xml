@@ -34,6 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="@string/easy"
+            android:textAllCaps="false"
             android:backgroundTint="@color/gray"
             />
 
@@ -42,6 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="@string/easy"
+            android:textAllCaps="false"
             android:backgroundTint="@color/gray"
             />
 
@@ -50,6 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="@string/easy"
+            android:textAllCaps="false"
             android:backgroundTint="@color/gray"
             />
 
@@ -58,6 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="@string/easy"
+            android:textAllCaps="false"
             android:backgroundTint="@color/gray"
             />
 

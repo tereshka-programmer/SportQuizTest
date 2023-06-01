@@ -29,7 +29,7 @@ class GameViewModel @Inject constructor(
 
     fun initQuestionsByLevel(level: String) {
         viewModelScope.launch {
-            listOfQuestions = questionsRepository.getQuestionsByLevel(level)
+            listOfQuestions = questionsRepository.getQuestionsByLevel(level).shuffled()
             Log.d("RESTAG", listOfQuestions.toString())
             nextQuestion()
         }
