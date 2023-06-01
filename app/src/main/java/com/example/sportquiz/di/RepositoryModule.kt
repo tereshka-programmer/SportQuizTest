@@ -1,5 +1,6 @@
 package com.example.sportquiz.di
 
+import com.example.sportquiz.data.repositoryImpl.QuestionsRepositoryImpl
 import com.example.sportquiz.data.room.RoomQuestionsSourceImpl
 import com.example.sportquiz.domain.repository.QuestionsRepository
 import dagger.Binds
@@ -13,7 +14,7 @@ abstract class RepositoryModule {
 
     @Binds
     abstract fun bindQuestionsRepository(
-        questionsSourceImpl: RoomQuestionsSourceImpl
+        questionsRepositoryImpl: QuestionsRepositoryImpl
     ): QuestionsRepository
 
 }
