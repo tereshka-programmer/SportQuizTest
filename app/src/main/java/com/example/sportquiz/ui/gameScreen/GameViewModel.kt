@@ -1,6 +1,5 @@
 package com.example.sportquiz.ui.gameScreen
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.sportquiz.domain.entities.Question
@@ -33,7 +32,6 @@ class GameViewModel @Inject constructor(
     fun initQuestionsByLevel(level: String) {
         viewModelScope.launch {
             listOfQuestions = questionsRepository.getQuestionsByLevel(level).shuffled()
-            Log.d("RESTAG", listOfQuestions.toString())
             nextQuestion()
         }
     }
@@ -49,7 +47,6 @@ class GameViewModel @Inject constructor(
     fun addScore() {
         val currentScore = sharedCacheRepository.getScore()
         sharedCacheRepository.setScore(currentScore + Constants.DEFAULT_INCREASE_OF_SCORE)
-        Log.d("RESTAG", "SCORE JUST ADDE")
     }
 
 }

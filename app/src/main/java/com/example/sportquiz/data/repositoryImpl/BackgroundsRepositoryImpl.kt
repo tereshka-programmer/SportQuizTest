@@ -1,6 +1,5 @@
 package com.example.sportquiz.data.repositoryImpl
 
-import android.util.Log
 import com.example.sportquiz.data.BackgroundsSource
 import com.example.sportquiz.domain.repository.BackgroundsRepository
 import com.example.sportquiz.domain.repository.SharedCacheRepository
@@ -18,6 +17,5 @@ class BackgroundsRepositoryImpl @Inject constructor(
 
     override fun buyAndSetBackgroundImage(id: Int) {
         sharedCacheRepository.setIdBackground(id)
-        Log.d("RESTAG", "JUST SETED")
     }
 }

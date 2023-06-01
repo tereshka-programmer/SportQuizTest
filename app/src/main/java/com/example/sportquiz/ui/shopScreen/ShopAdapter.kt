@@ -1,7 +1,6 @@
 package com.example.sportquiz.ui.shopScreen
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -57,7 +56,6 @@ class ShopAdapter(
 
     override fun onClick(view: View?) {
         val id = view?.tag as Int
-        Log.d("RESTAG", "ID $id")
 
         AlertDialog.Builder(view.context)
             .setTitle("Are you shure?")

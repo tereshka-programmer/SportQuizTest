@@ -3,7 +3,6 @@ package com.example.sportquiz.di
 import com.example.sportquiz.data.repositoryImpl.BackgroundsRepositoryImpl
 import com.example.sportquiz.data.repositoryImpl.QuestionsRepositoryImpl
 import com.example.sportquiz.data.repositoryImpl.SharedCacheRepositoryImpl
-import com.example.sportquiz.data.room.RoomQuestionsSourceImpl
 import com.example.sportquiz.domain.repository.BackgroundsRepository
 import com.example.sportquiz.domain.repository.QuestionsRepository
 import com.example.sportquiz.domain.repository.SharedCacheRepository

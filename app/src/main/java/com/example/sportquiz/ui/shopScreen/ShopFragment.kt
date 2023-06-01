@@ -13,7 +13,6 @@ import com.example.sportquiz.R
 import com.example.sportquiz.databinding.FragmentShopBinding
 import com.example.sportquiz.domain.repository.SharedCacheRepository
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
 
 @AndroidEntryPoint
