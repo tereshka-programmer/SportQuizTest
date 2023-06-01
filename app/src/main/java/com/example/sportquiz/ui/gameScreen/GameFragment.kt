@@ -1,6 +1,5 @@
 package com.example.sportquiz.ui.gameScreen
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.Button

@@ -21,4 +21,12 @@ class SharedCacheRepositoryImpl @Inject constructor(
             .putInt(Constants.SCORE_KEY, score)
             .apply()
     }
+
+    override fun setIdBackground(id: Int) {
+        sharedPreferences.edit()
+            .putInt(Constants.BACKGROUND_KEY, id)
+            .apply()
+    }
+
+    override fun getBackgroundId(): Int = sharedPreferences.getInt(Constants.BACKGROUND_KEY, 0)
 }

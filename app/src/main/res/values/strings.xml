@@ -5,4 +5,6 @@
     <string name="medium">Medium</string>
     <string name="choose_the_level_please">Choose the level please</string>
     <string name="submit">Submit</string>
+    <string name="buy">Buy</string>
+    <string name="shop">Shop</string>
 </resources>

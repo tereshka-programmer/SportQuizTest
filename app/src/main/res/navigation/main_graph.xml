@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_mainFragment_to_gameFragment"
             app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_shopFragment"
+            app:destination="@id/shopFragment" />
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
@@ -23,4 +26,8 @@
             android:name="level"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="com.example.sportquiz.ui.shopScreen.ShopFragment"
+        android:label="ShopFragment" />
 </navigation>

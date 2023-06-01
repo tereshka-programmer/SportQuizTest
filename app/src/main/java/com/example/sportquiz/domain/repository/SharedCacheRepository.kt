@@ -6,4 +6,8 @@ interface SharedCacheRepository {
 
     fun setScore(score: Int)
 
+    fun setIdBackground(id: Int)
+
+    fun getBackgroundId(): Int
+
 }
