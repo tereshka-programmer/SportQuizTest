@@ -4,4 +4,5 @@
     <string name="hard">Hard</string>
     <string name="medium">Medium</string>
     <string name="choose_the_level_please">Choose the level please</string>
+    <string name="submit">Submit</string>
 </resources>
