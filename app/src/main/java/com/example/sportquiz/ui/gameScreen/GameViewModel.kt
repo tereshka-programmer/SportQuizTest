@@ -41,13 +41,15 @@ class GameViewModel @Inject constructor(
     fun nextQuestion() {
         viewModelScope.launch {
             _question.emit(listOfQuestions[questionsCounter])
-            if (listOfQuestions.size > questionsCounter) questionsCounter++
+            if (listOfQuestions.size-1 > questionsCounter) questionsCounter++
             else _eventOfReturn.publishEvent(Event(Unit))
         }
     }
 
     fun addScore() {
-        sharedCacheRepository.setScore(Constants.DEFAULT_INCREASE_OF_SCORE)
+        val currentScore = sharedCacheRepository.getScore()
+        sharedCacheRepository.setScore(currentScore + Constants.DEFAULT_INCREASE_OF_SCORE)
+        Log.d("RESTAG", "SCORE JUST ADDE")
     }
 
 }
