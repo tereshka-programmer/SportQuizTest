@@ -1,4 +1,4 @@
-package com.example.sportquiz.data.room.questions.common
+package com.example.sportquiz.ui.common
 
 object LevelsOfQuestions {
     val EASY_LEVEL = "easy"

@@ -5,24 +5,46 @@ import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.sportquiz.R
+import com.example.sportquiz.databinding.FragmentMainBinding
 import com.example.sportquiz.domain.repository.QuestionsRepository
+import com.example.sportquiz.ui.common.LevelsOfQuestions
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainFragment(): Fragment(R.layout.fragment_main) {
 
-    @Inject lateinit var repository: QuestionsRepository
+   // @Inject lateinit var repository: QuestionsRepository
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val binding = FragmentMainBinding.bind(view)
 
+        binding.btEasyLevel.setOnClickListener { navigateToEasyLevel() }
+        binding.btMediumLevel.setOnClickListener { navigateToMediumLevel() }
+        binding.btHardLevel.setOnClickListener { navigateToHardLevel() }
 
-        lifecycleScope.launchWhenCreated {
-            val list = repository.getQuestions()
-            Log.d("RESTAG", list.toString())
-        }
+//        lifecycleScope.launch {
+//            Log.d("RESTAG", repository.getQuestionsByLevel("easy").toString())
+//        }
+    }
+
+    private fun navigateToEasyLevel() {
+        val action = MainFragmentDirections.actionMainFragmentToGameFragment(LevelsOfQuestions.EASY_LEVEL)
+        findNavController().navigate(action)
+    }
+
+    private fun navigateToMediumLevel() {
+        val action = MainFragmentDirections.actionMainFragmentToGameFragment(LevelsOfQuestions.MEDIUM_LEVEL)
+        findNavController().navigate(action)
+    }
+
+    private fun navigateToHardLevel() {
+        val action = MainFragmentDirections.actionMainFragmentToGameFragment(LevelsOfQuestions.HARD_LEVEL)
+        findNavController().navigate(action)
     }
 
 }
